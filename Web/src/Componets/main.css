@@ -1,0 +1,90 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+/* ----------------------------------------------------------------- */
+
+.header-secondary{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar{
+    font-family: Roboto,sans-serif;
+}
+
+.navbar-brand{
+    margin-left: 2%;
+
+}
+
+/* ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- */
+
+.tables-container{
+    display: grid;
+    grid-template-columns: 349.5px 357.5px 493.5px;
+    grid-gap: 3rem;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    max-height: 100vh;
+    justify-content: center;
+}
+
+
+
+.table{
+    /* table-layout:auto; */
+    max-height: 100vh;
+    display: block;
+    overflow-y: scroll;
+}
+
+.tables-container:hover{
+    overflow-y: scroll;
+}
+
+.table caption{
+    /* text-align: left; */
+    font-family: Roboto,sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+    margin-left: 3%;
+    caption-side:top;
+}
+
+.table thead{
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.table tr{
+    height: 41.5px !important;
+    transform-origin: top;
+    animation: anim 0.5s ease;
+}
+
+.table td{
+    height: 41.5px !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@keyframes anim {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+/* ----------------------------------------------------------------- */
