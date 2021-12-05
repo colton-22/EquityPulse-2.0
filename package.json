@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "client": "cd Web && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm start\"",
-    "client:build": "cd Web && npm run build"
-    
+    "client:build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "concurrently": "^6.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",
     "socket.io": "^4.3.1"

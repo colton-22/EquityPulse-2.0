@@ -1,3 +1,27 @@
+var express = require('express');
+var path = require('path');
+var app = express();
+
+// ---------------- ADD THIS ----------------
+var cors = require("cors");
+app.use(cors());
+// --------------------------------
+
+
+// ---------------- ADD THIS ----------------
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+// --------------------------------
+
+// ---------------- ADD THIS ----------------
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
+  // --------------------------------
+  
+
 const mongoose = require ('mongoose');
 const io = require ('socket.io')(process.env.PORT || 3001, {
     cors: {
