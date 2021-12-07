@@ -1,7 +1,6 @@
 var express = require("express");
 var path = require("path");
 var app = express();
-
 const http = require('http').createServer(app);
 
 const PORT = process.env.PORT || 3002;
@@ -10,6 +9,8 @@ const PORT = process.env.PORT || 3002;
 var cors = require("cors");
 app.use(cors());
 // --------------------------------
+
+
 
 // ---------------- ADD THIS ----------------
 // Serve static files from the React app

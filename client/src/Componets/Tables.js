@@ -7,7 +7,7 @@ const element = (id) => {
 
 const tableBody = element('tableBody')
 
-const socket = io('http://localhost:3002');
+const socket = io('https://equitypulse.herokuapp.com/');
 
 if(socket !== undefined){
     console.log('connected to socket')
