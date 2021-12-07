@@ -10,7 +10,12 @@ var cors = require("cors");
 app.use(cors());
 // --------------------------------
 
+app.use(express.static("client/build"));
 
+
+app.get('/', (req, res) => {
+  res.send('hello');
+})
 
 // ---------------- ADD THIS ----------------
 // Serve static files from the React app

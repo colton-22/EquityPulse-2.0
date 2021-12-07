@@ -9,10 +9,12 @@ const element = (id) => {
 
 const tableBody = element('tableBody')
 
-const socket = io('https://equitypulse.herokuapp.com:80/');
+const socket = io("https://equitypulse.herokuapp.com:8080/");
 
 if(socket !== undefined){
     console.log('connected to socket')
+    console.log(PORT)
+
     socket.on('options', (data) => {
         if(data.length){
             for(var x=0; x<data.length;x++){
