@@ -10,7 +10,7 @@ var cors = require("cors");
 app.use(cors());
 // --------------------------------
 
-app.use(express.static("client/build"));
+// app.use(express.static("client/build"));
 
 
 app.get('/', (req, res) => {
@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
 
 // ---------------- ADD THIS ----------------
 // Serve static files from the React app
-if (process.env.NODE_ENV === 'production') {
-app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === 'production') {
+// app.use(express.static("client/build"));
+// }
 // --------------------------------
 
 
