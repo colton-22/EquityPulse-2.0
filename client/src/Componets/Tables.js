@@ -8,7 +8,6 @@ import './main.css';
 const element = (id) => {
     return document.getElementById(id)};
 
-const tableBody = element('tableBody')
 
 const socket = io();
 
