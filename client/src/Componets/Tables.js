@@ -7,7 +7,7 @@ const element = (id) => {
 
 const tableBody = element('tableBody')
 
-const socket = io();
+const socket = io('http://localhost:3002');
 
 if(socket !== undefined){
     console.log('connected to socket')
