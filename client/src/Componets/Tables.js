@@ -2,18 +2,19 @@ import React from 'react';
 import io from 'socket.io-client';
 import './main.css';
 
-const PORT = process.env.PORT
+var HOST = location.origin.replace(/^http/, 'ws');
+
 
 const element = (id) => {
     return document.getElementById(id)};
 
 const tableBody = element('tableBody')
 
-const socket = io("https://equitypulse.herokuapp.com/");
+const socket = io(HOST);
 
 if(socket !== undefined){
     console.log('connected to socket')
-    console.log(PORT)
+    console.log(HOST)
 
     socket.on('options', (data) => {
         if(data.length){
