@@ -2,12 +2,14 @@ import React from 'react';
 import io from 'socket.io-client';
 import './main.css';
 
+const PORT = process.env.PORT
+
 const element = (id) => {
     return document.getElementById(id)};
 
 const tableBody = element('tableBody')
 
-const socket = io('https://equitypulse.herokuapp.com/');
+const socket = io('https://equitypulse.herokuapp.com:80/');
 
 if(socket !== undefined){
     console.log('connected to socket')
