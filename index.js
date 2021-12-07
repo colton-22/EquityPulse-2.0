@@ -17,12 +17,10 @@ app.get('/', (req, res) => {
   res.send('hello');
 })
 
-// ---------------- ADD THIS ----------------
-// Serve static files from the React app
-// if (process.env.NODE_ENV === 'production') {
-// app.use(express.static("client/build"));
-// }
-// --------------------------------
+
+if (process.env.NODE_ENV === 'production') {
+app.use(express.static("client/build"));
+}
 
 
 const mongoose = require("mongoose");
