@@ -2,7 +2,7 @@ import React from 'react';
 import io from 'socket.io-client';
 import './main.css';
 
-var HOST = location.origin.replace(/^http/, 'ws');
+// var HOST = location.origin.replace(/^http/, 'ws');
 
 
 const element = (id) => {
@@ -10,11 +10,10 @@ const element = (id) => {
 
 const tableBody = element('tableBody')
 
-const socket = io(HOST);
+const socket = io();
 
 if(socket !== undefined){
     console.log('connected to socket')
-    console.log(HOST)
 
     socket.on('options', (data) => {
         if(data.length){
