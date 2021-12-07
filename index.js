@@ -2,7 +2,9 @@ var express = require("express");
 var path = require("path");
 var app = express();
 
-const PORT = process.env.PORT || 3001;
+const http = require('http').createServer(app);
+
+const PORT = process.env.PORT || 3002;
 
 // ---------------- ADD THIS ----------------
 var cors = require("cors");
@@ -11,14 +13,14 @@ app.use(cors());
 
 // ---------------- ADD THIS ----------------
 // Serve static files from the React app
-if(process.env.NODE_ENV ==='production') {
+if (process.env.NODE_ENV === 'production') {
 app.use(express.static("client/build"));
 }
 // --------------------------------
 
 
 const mongoose = require("mongoose");
-const io = require("socket.io")(PORT, {
+const io = require("socket.io")(http, {
   cors: {
     origin: "*",
   },
@@ -115,3 +117,5 @@ mongoose.connect(process.env.DB_CONNECTION, (err, db) => {
     });
   });
 });
+
+http.listen(PORT, () => console.log("ok"))

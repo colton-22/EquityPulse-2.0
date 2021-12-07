@@ -5,7 +5,6 @@ import Headers from './Componets/Headers';
 import Nav from './Componets/Nav';
 
 
-
 function App() {
   return (
     <div className="App">
