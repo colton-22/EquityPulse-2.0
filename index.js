@@ -4,7 +4,8 @@ var app = express();
 
 const http = require('http').createServer(app);
 
-const PORT = process.env.PORT || 3002;
+PORT = process.env.PORT || 4001;
+
 
 // ---------------- ADD THIS ----------------
 var cors = require("cors");
@@ -20,11 +21,8 @@ app.use(express.static("client/build"));
 
 
 const mongoose = require("mongoose");
-const io = require("socket.io")(http, {
-  cors: {
-    origin: "*",
-  },
-});
+const io = require("socket.io")(http);
+io.set('origins', '*:*');
 
 require("dotenv/config");
 

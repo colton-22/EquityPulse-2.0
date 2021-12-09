@@ -11,6 +11,7 @@ const element = (id) => {
 
 const socket = io();
 
+
 if(socket !== undefined){
     console.log('connected to socket')
 
